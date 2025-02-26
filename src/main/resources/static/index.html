@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <title>Kakao 지도 시작하기</title>
+    <meta charset="utf-8">
+    <title>지도 위 버튼으로 로드뷰 표시하기</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<div id="map" style="width:2000px;height:1000px;"></div>
+<div id="container">
+    <div id="rvWrapper">
+        <div id="roadview" style="width:100%;height:100%;"></div> <!-- 로드뷰를 표시할 div 입니다 -->
+        <div id="close" title="로드뷰닫기" onclick="closeRoadview()"><span class="img"></span></div>
+    </div>
+    <div id="mapWrapper">
+        <div id="map" style="width:100%;height:100%"></div> <!-- 지도를 표시할 div 입니다 -->
+        <div id="roadviewControl" onclick="setRoadviewRoad()"></div>
+    </div>
+</div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=input_api_key"></script>
-<script>
-    var container = document.getElementById('map');
-    var options = {
-        center: new kakao.maps.LatLng(36.40908542931618, 127.53117132561721),
-        level: 8
-    };
-
-    var map = new kakao.maps.Map(container, options);
-</script>
+<script src="js/script.js"></script>
+<script src="./js/toolbar.js"></script>
 </body>
 </html>
